@@ -28,22 +28,23 @@
 :root{
   /* --- Care Green 팔레트 --- */
   --green-900:#065F46;
+  --green-700:#047857;
   --green-500:#10B981;
   --green-300:#34D399;
   --green-100:#A7F3D0;
 
-  /* --- 딥 다크 배경 --- */
-  --bg:#07100D;
-  --bg-2:#0A1712;
-  --surface:rgba(16,185,129,.05);
-  --surface-2:rgba(16,185,129,.08);
-  --stroke:rgba(52,211,153,.16);
-  --stroke-strong:rgba(52,211,153,.4);
+  /* --- 라이트 배경 --- */
+  --bg:#F7FBF9;
+  --bg-2:#EEF7F2;
+  --surface:rgba(6,95,70,.045);
+  --surface-2:rgba(6,95,70,.08);
+  --stroke:rgba(6,95,70,.14);
+  --stroke-strong:rgba(6,95,70,.35);
 
   /* --- 텍스트 --- */
-  --text:#ECFDF5;
-  --text-dim:#9DBDB0;
-  --text-faint:#5F7D71;
+  --text:#0C2620;
+  --text-dim:#3C5C51;
+  --text-faint:#5C7A70;
 
   /* --- 타이포 --- */
   --serif:"Noto Serif KR",serif;
@@ -69,8 +70,8 @@ body{
 body::before{
   content:"";position:fixed;inset:0;z-index:-2;
   background:
-    radial-gradient(60% 50% at 15% 0%,rgba(6,95,70,.35),transparent 70%),
-    radial-gradient(50% 45% at 100% 20%,rgba(16,185,129,.12),transparent 70%),
+    radial-gradient(60% 50% at 15% 0%,rgba(167,243,208,.55),transparent 70%),
+    radial-gradient(50% 45% at 100% 20%,rgba(16,185,129,.14),transparent 70%),
     linear-gradient(180deg,var(--bg),var(--bg-2));
 }
 
@@ -78,7 +79,7 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
 /* 접근성: 키보드 포커스 */
-:focus-visible{outline:2px solid var(--green-300);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid var(--green-700);outline-offset:3px;border-radius:6px}
 
 /* ============================================================
    헤더
@@ -86,20 +87,20 @@ a{color:inherit;text-decoration:none}
 header{
   position:sticky;top:0;z-index:50;
   backdrop-filter:blur(14px);
-  background:rgba(7,16,13,.72);
+  background:rgba(247,251,249,.78);
   border-bottom:1px solid var(--stroke);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
 .brand{display:flex;align-items:baseline;gap:10px}
 .brand .mark{
   font-family:var(--serif);font-weight:900;font-size:1.35rem;letter-spacing:-.02em;
-  background:linear-gradient(90deg,var(--green-300),var(--green-100));
+  background:linear-gradient(90deg,var(--green-900),var(--green-500));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .brand .en{font-size:.72rem;color:var(--text-faint);font-weight:400;letter-spacing:.04em}
 .head-info{font-size:.82rem;color:var(--text-dim);text-align:right;line-height:1.5}
 .head-info a{color:var(--text-dim);transition:color .2s}
-.head-info a:hover{color:var(--green-300)}
+.head-info a:hover{color:var(--green-700)}
 @media(max-width:640px){.head-info{font-size:.68rem}.nav{height:auto;padding:12px 0}}
 
 /* ============================================================
@@ -111,18 +112,18 @@ header{
 .hero-inner{max-width:760px}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:.8rem;letter-spacing:.14em;color:var(--green-300);
+  font-size:.8rem;letter-spacing:.14em;color:var(--green-900);
   border:1px solid var(--stroke-strong);border-radius:100px;
   padding:7px 16px;margin-bottom:26px;background:var(--surface);
 }
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-300);box-shadow:0 0 12px var(--green-300)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green-500);box-shadow:0 0 12px var(--green-500)}
 .hero h1{
   font-family:var(--serif);font-weight:900;
   font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.12;letter-spacing:-.03em;
   margin-bottom:8px;
 }
 .hero h1 .accent{
-  background:linear-gradient(100deg,var(--green-500),var(--green-300),var(--green-100));
+  background:linear-gradient(100deg,var(--green-900),var(--green-700),var(--green-500));
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .hero .en-title{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,2.4vw,1.4rem);color:var(--text-faint);letter-spacing:.02em;margin-bottom:24px}
@@ -143,7 +144,7 @@ header{
    ============================================================ */
 section.block{padding:96px 0}
 .sec-head{margin-bottom:52px;max-width:640px}
-.sec-head .tag{font-size:.78rem;letter-spacing:.16em;color:var(--green-500);font-weight:500}
+.sec-head .tag{font-size:.78rem;letter-spacing:.16em;color:var(--green-700);font-weight:500}
 .sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;margin:12px 0 14px}
 .sec-head p{color:var(--text-dim);font-size:1.02rem}
 
@@ -181,20 +182,20 @@ section.block{padding:96px 0}
   -webkit-mask-composite:xor;mask-composite:exclude;
   opacity:0;transition:opacity .3s;
 }
-.card:hover{border-color:var(--stroke-strong);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.card:hover{border-color:var(--stroke-strong);box-shadow:0 20px 50px rgba(6,40,30,.12)}
 .card:hover::after{opacity:1}
 .card .icon{
   width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--green-900),rgba(16,185,129,.25));
-  border:1px solid var(--stroke-strong);margin-bottom:18px;color:var(--green-300);
+  background:linear-gradient(135deg,var(--green-900),rgba(16,185,129,.35));
+  border:1px solid var(--stroke-strong);margin-bottom:18px;color:#ECFDF5;
 }
 .card .icon svg{width:26px;height:26px}
 .card h3{font-size:1.12rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
 .card p{font-size:.88rem;color:var(--text-dim);flex:1;margin-bottom:16px}
 .card .meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
-.card .meta span{font-size:.7rem;padding:4px 10px;border-radius:100px;background:var(--surface-2);border:1px solid var(--stroke);color:var(--green-100)}
-.card .meta span.admin{background:rgba(220,150,20,.14);border-color:rgba(220,150,20,.4);color:#F5C97A}
-.card .go{font-size:.85rem;font-weight:500;color:var(--green-300);display:inline-flex;align-items:center;gap:6px}
+.card .meta span{font-size:.7rem;padding:4px 10px;border-radius:100px;background:var(--surface-2);border:1px solid var(--stroke);color:var(--green-900)}
+.card .meta span.admin{background:rgba(180,120,10,.12);border-color:rgba(180,120,10,.4);color:#8A5A00}
+.card .go{font-size:.85rem;font-weight:500;color:var(--green-700);display:inline-flex;align-items:center;gap:6px}
 .card .go svg{width:15px;height:15px;transition:transform .2s}
 .card:hover .go svg{transform:translateX(4px)}
 .card.hidden{display:none}
@@ -520,7 +521,7 @@ footer{border-top:1px solid var(--stroke);padding:52px 0 40px;margin-top:40px}
           const d=Math.hypot(a.x-b.x,a.y-b.y);
           if(d<MAXLINK){
             const o=(1-d/MAXLINK)*.5;
-            ctx.strokeStyle=`rgba(52,211,153,${o})`;
+            ctx.strokeStyle=`rgba(6,95,70,${o})`;
             ctx.lineWidth=1;
             ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
           }
@@ -528,7 +529,7 @@ footer{border-top:1px solid var(--stroke);padding:52px 0 40px;margin-top:40px}
       }
       // 노드
       for(const n of nodes){
-        ctx.fillStyle='rgba(16,185,129,.9)';
+        ctx.fillStyle='rgba(6,95,70,.85)';
         ctx.beginPath();ctx.arc(n.x,n.y,1.8,0,Math.PI*2);ctx.fill();
       }
       raf=requestAnimationFrame(draw);
@@ -540,11 +541,11 @@ footer{border-top:1px solid var(--stroke);padding:52px 0 40px;margin-top:40px}
       for(let i=0;i<nodes.length;i++){
         for(let j=i+1;j<nodes.length;j++){
           const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-          if(d<MAXLINK){ctx.strokeStyle=`rgba(52,211,153,${(1-d/MAXLINK)*.4})`;ctx.lineWidth=1;
+          if(d<MAXLINK){ctx.strokeStyle=`rgba(6,95,70,${(1-d/MAXLINK)*.4})`;ctx.lineWidth=1;
             ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
         }
       }
-      for(const n of nodes){ctx.fillStyle='rgba(16,185,129,.8)';ctx.beginPath();ctx.arc(n.x,n.y,1.8,0,Math.PI*2);ctx.fill();}
+      for(const n of nodes){ctx.fillStyle='rgba(6,95,70,.75)';ctx.beginPath();ctx.arc(n.x,n.y,1.8,0,Math.PI*2);ctx.fill();}
     }
     const hero=document.querySelector('.hero');
     hero.addEventListener('mousemove',e=>{const r=canvas.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
